@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration // 加了该注解，则该类相当于applicationContext.xml配置文件
+@Configuration // 加了该注解，则该类相当于一个applicationContext.xml配置文件
 public class ConfigBean {
 
     @Bean

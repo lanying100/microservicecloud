@@ -9,19 +9,20 @@ import javax.annotation.Resource;
 import java.util.List;
 
 // 前后端分离，后端返回给前端的不是jsp，而是JSON字符串
-@RestController
+@RestController //  @Controller + @ResponseBody
 public class DeptController {
 
     @Autowired
     private DeptService deptService;
 
-    @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
-    public boolean add(@RequestBody Dept dept){
+    // @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
+    @PostMapping("/dept/add")
+    public boolean add(@RequestBody Dept dept){ // @RequestBody将请求体中的参数装配成实体类对象，前提是key和属性名称一致
         return deptService.add(dept);
     }
 
     @GetMapping("/dept/get/{id}")
-    public Dept get(@PathVariable("id") Long id){
+    public Dept get(@PathVariable("id") Long id){ // 获取URL中的参数
         return deptService.get(id);
     }
 

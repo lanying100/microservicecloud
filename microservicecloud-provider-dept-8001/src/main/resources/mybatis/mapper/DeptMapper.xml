@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lanying.springcloud.dao.DeptDao">
+<mapper namespace="com.lanying.EurekaServer7001_App.dao.DeptDao">
     <insert id="addDept" parameterType="Dept">
         INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE());
     </insert>

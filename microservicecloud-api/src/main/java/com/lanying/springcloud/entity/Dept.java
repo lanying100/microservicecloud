@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+// lombok提供的方法生成
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

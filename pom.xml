@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <!--根据尚硅谷的pom.xml配置-->
 
-    <groupId>com.lanying.springcloud</groupId>
+    <groupId>com.lanying.EurekaServer7001_App</groupId>
     <artifactId>microservicecloud</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-dept-8001</module>
         <module>microservicecloud-consumer-dept-80</module>
+        <module>microservicecloud-eureka-7001</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -26,7 +27,7 @@
     </properties>
 
     <!--dependencyManagement标签便于统一管理子项目的jar包版本，子项目可以重写。-->
-    <!--该标签没有真的引入这些依赖项。只有当子项目的pom.xml中显示的写出这些依赖项，并且没有写版本号时，才会真正引入依赖项（jar）-->
+    <!--该标签没有真的引入这些依赖项。只有当子项目的pom.xml中显式地写出这些依赖项，并且没有写版本号时，才会真正引入依赖项（jar）-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -37,14 +38,13 @@
                 <scope>import</scope>
             </dependency>
 
-
-
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.47</version>
             </dependency>
+
             <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
             <dependency>
                 <groupId>com.alibaba</groupId>
